@@ -1,19 +1,18 @@
 package com.sparta.ac.palindrome;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Palindrome {
     public static void main (String [] args) {
-        String sentenceToCheck = "the Racecar is blue said butidbsjd hannah racecar Level sMurdrums";
+        String sentenceToCheck = "Wow, a madam in a honda civic, the Radar went pop on the level.";
 
         System.out.println(Arrays.toString(getLongestPalindromesArray(sentenceToCheck)));
     }
 
     public static String[] getLongestPalindromesArray(String sentence) {
-        String[] sentenceArray = sentence.split(" ");
+        String[] sentenceArray = sentence.split("\\W");
         List<String> longestPalindrome = new ArrayList<String>();
         for (int i = 0; i < sentenceArray.length; i++) {
             if (isPalindromeCheker(sentenceArray[i]) && sentenceArray[i].length() >= 3) {
