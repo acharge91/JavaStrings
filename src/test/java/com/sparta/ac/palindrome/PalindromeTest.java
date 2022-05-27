@@ -49,6 +49,15 @@ public class PalindromeTest {
     }
 
     @Test
+    @DisplayName("Test returns correct palindromes from sentence with special characters")
+    void checkSentenceReturnsCorrectPalindromes() {
+        String stringToTest= "Hannah degged the plants and got redder. She 'murdrum' got in her !racecar? with murdrum,";
+        String[] arrayExpectedResult = {"murdrum", git ad"racecar", "murdrum"};
+        Assertions.assertArrayEquals(arrayExpectedResult, Palindrome.getLongestPalindromesArray(stringToTest));
+    }
+
+
+    @Test
     @DisplayName("Test returns empty string string if null")
     void checkNullReturnsEmptyString() {
         String[] arrayExpectedResult = {""};
