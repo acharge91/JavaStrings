@@ -12,14 +12,18 @@ public class Palindrome {
     }
 
     public static String[] getLongestPalindromesArray(String sentence) {
-        String[] sentenceArray = sentence.split("\\W");
-        List<String> longestPalindrome = new ArrayList<String>();
-        for (int i = 0; i < sentenceArray.length; i++) {
-            if (isPalindromeCheker(sentenceArray[i]) && sentenceArray[i].length() >= 3) {
-                addPalindromeToArray(sentenceArray, longestPalindrome, i);
+        if (sentence != null) {
+            String[] sentenceArray = sentence.split("\\W");
+            List<String> longestPalindrome = new ArrayList<String>();
+            for (int i = 0; i < sentenceArray.length; i++) {
+                if (isPalindromeCheker(sentenceArray[i]) && sentenceArray[i].length() >= 3) {
+                    addPalindromeToArray(sentenceArray, longestPalindrome, i);
+                }
             }
+            return longestPalindrome.toArray(new String[0]);
+        } else {
+            return new String[]{""};
         }
-        return longestPalindrome.toArray(new String[0]);
     }
 
     private static void addPalindromeToArray(String[] sentenceArray, List<String> longestPalindrome, int i) {

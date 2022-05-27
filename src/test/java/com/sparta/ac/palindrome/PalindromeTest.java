@@ -48,4 +48,11 @@ public class PalindromeTest {
         Assertions.assertArrayEquals(arrayExpectedResult, Palindrome.getLongestPalindromesArray(stringToTest));
     }
 
+    @Test
+    @DisplayName("Test returns empty string string if null")
+    void checkNullReturnsEmptyString() {
+        String[] arrayExpectedResult = {""};
+        Assertions.assertArrayEquals(arrayExpectedResult, Palindrome.getLongestPalindromesArray(null));
+    }
+
 }
